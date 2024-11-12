@@ -28,3 +28,25 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+
+/* Media query for larger screens (greater than 768px) */
+@media (max-width: 540px) {
+
+  /* Base styles for the input box */
+  #search_input_react {
+    width: 20px;
+    /* Default width for tablet or smaller screens */
+    transition: width 0.3s ease;
+    /* Smooth transition for width change */
+    padding: 20px;
+  }
+
+  /* Focus styles to increase the size of the input box */
+  #search_input_react:focus {
+    width: 200px;
+  }
+  #search_input_react::placeholder {
+    color: transparent;
+}
+}
