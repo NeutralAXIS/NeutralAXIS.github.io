@@ -17,9 +17,6 @@ To define and add a grid to a new ETABS model using Python, we can use the `new_
 ### **Python Code Example**:
 
 ```python
-# Initialize the ETABS model
-SapModel.InitializeNewModel(6)  # Initialize with kN-m-C units (kilonewtons, meters, Celsius)
-
 # Define grid parameters
 number_stories = 10               # Total number of stories (floors) in the building
 typical_story_height = 3.0        # Height of each story, except the bottom story
@@ -30,7 +27,7 @@ spacing_x = 6.0                   # Distance between grid lines in the X directi
 spacing_y = 5.0                   # Distance between grid lines in the Y direction (meters)
 
 # Call the function to create the grid
-ret = SapModel.File.NewGridOnly(
+ret = EtabsModel.File.NewGridOnly(
     number_stories, 
     typical_story_height, 
     bottom_story_height, 
@@ -49,7 +46,7 @@ else:
 ### **Explanation of the Code**:
 
 #### **Grid Parameters**:
-The function `SapModel.File.NewGridOnly()` accepts the following parameters:
+The function `EtabsModel.File.NewGridOnly()` accepts the following parameters:
 | Parameter             | Type   | Description                                                 |
 |-----------------------|--------|-------------------------------------------------------------|
 | `number_stories`       | int    | Total number of stories (floors) in the building.           |
@@ -61,7 +58,7 @@ The function `SapModel.File.NewGridOnly()` accepts the following parameters:
 | `spacing_y`            | float  | Distance between grid lines in the Y direction (meters).    |
 
 #### **Creating the Grid**:
-- The function `SapModel.File.NewGridOnly()` will create the grid using the parameters provided above.
+- The function `EtabsModel.File.NewGridOnly()` will create the grid using the parameters provided above.
 - It sets up both the horizontal (X) and vertical (Y) grid lines, as well as the building's floor heights, including a specific height for the bottom floor.
 
 #### **Error Handling**:
@@ -70,7 +67,7 @@ The function `SapModel.File.NewGridOnly()` accepts the following parameters:
 - If `ret` is zero, the grid was added successfully, and a success message is printed.
 
 ### **Key Considerations**:
-- **Units**: The model is initialized with `SapModel.InitializeNewModel(6)`, which sets the units to kilonewtons (kN) for forces, meters (m) for length, and Celsius for temperature.
+- **Units**: The model is initialized with `EtabsModel.InitializeNewModel(6)`, which sets the units to kilonewtons (kN) for forces, meters (m) for length, and Celsius for temperature.
 - **Grid Layout**: The number of grid lines in both directions (`number_lines_x` and `number_lines_y`) and the spacing between them (`spacing_x` and `spacing_y`) determine the layout of the grid.
 - **Story Heights**: The `typical_story_height` applies to most stories, while the `bottom_story_height` specifies a potentially different height for the bottom-most story.
 

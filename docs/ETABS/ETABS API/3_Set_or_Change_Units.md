@@ -68,7 +68,7 @@ You can also change the units of an existing model during modeling using the `Se
 
 #### **Syntax**:
 ```python
-ret = SapModel.SetPresentUnits(units)
+ret = EtabsModel.SetPresentUnits(units)
 ```
 
 #### **Parameters**:
@@ -77,7 +77,7 @@ ret = SapModel.SetPresentUnits(units)
 #### **Example**:
 ```python
 # Change the current units to 'kN_m_C' (option 6 from the table)
-ret = SapModel.SetPresentUnits(6)
+ret = EtabsModel.SetPresentUnits(6)
 if ret != 0:
     print("Failed to change the units.")
 ```
