@@ -115,10 +115,10 @@ myETABSObject = helper.CreateObjectProgID("CSI.ETABS.API.ETABSObject")  # Create
 myETABSObject.ApplicationStart()
 
 # Access the SapModel interface
-SapModel = myETABSObject.SapModel
+EtabsModel = myETABSObject.SapModel
 
 # Initialize a new model
-SapModel.InitializeNewModel()
+EtabsModel.InitializeNewModel()
 ```
 
 ---
