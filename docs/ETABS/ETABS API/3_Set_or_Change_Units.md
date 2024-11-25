@@ -45,7 +45,7 @@ To start a new model with a specific unit system, use the `InitializeNewModel()`
 
 #### **Syntax**:
 ```python
-ret = SapModel.InitializeNewModel(units)
+ret = EtabsModel.InitializeNewModel(units)
 ```
 
 #### **Parameters**:
@@ -55,7 +55,7 @@ ret = SapModel.InitializeNewModel(units)
 ```python
 # Initialize a new model with the unit system 'kN_m_C' (option 6 from the table)
 kN_m_C = 6
-ret = SapModel.InitializeNewModel(kN_m_C)
+ret = EtabsModel.InitializeNewModel(kN_m_C)
 if ret != 0:
     print("Failed to initialize the model.")
 ```
