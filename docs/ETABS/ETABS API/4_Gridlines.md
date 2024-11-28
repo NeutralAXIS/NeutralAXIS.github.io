@@ -50,7 +50,7 @@ else:
 
 ### **Explanation of the Code**:
 
-#### [**Units Table**](./Set_or_Change_Units#unit-options-table)
+#### [**Unit Options Table**](Set_or_Change_Units#unit-options-table)
 
 #### **Grid Parameters**:
 The function `EtabsModel.File.NewGridOnly()` accepts the following parameters:
