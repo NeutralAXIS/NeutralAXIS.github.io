@@ -17,6 +17,11 @@ To define and add a grid to a new ETABS model using Python, we can use the `new_
 ### **Python Code Example**:
 
 ```python
+# Change the current units to 'kN_m_C' (option 6 from the table)
+ret = EtabsModel.SetPresentUnits(6)
+if ret != 0:
+    print("Failed to change the units.")
+
 # Define grid parameters
 number_stories = 10               # Total number of stories (floors) in the building
 typical_story_height = 3.0        # Height of each story, except the bottom story
@@ -45,6 +50,8 @@ else:
 
 ### **Explanation of the Code**:
 
+#### [**Units Table**](./Set_or_Change_Units#unit-options-table)
+
 #### **Grid Parameters**:
 The function `EtabsModel.File.NewGridOnly()` accepts the following parameters:
 | Parameter             | Type   | Description                                                 |
@@ -54,8 +61,8 @@ The function `EtabsModel.File.NewGridOnly()` accepts the following parameters:
 | `bottom_story_height`  | float  | Height of the bottom story, which may differ from others.   |
 | `number_lines_x`       | int    | Number of grid lines in the X direction (horizontal).       |
 | `number_lines_y`       | int    | Number of grid lines in the Y direction (vertical).         |
-| `spacing_x`            | float  | Distance between grid lines in the X direction (meters).    |
-| `spacing_y`            | float  | Distance between grid lines in the Y direction (meters).    |
+| `spacing_x`            | float  | Distance between grid lines in the X direction.             |
+| `spacing_y`            | float  | Distance between grid lines in the Y direction.             |
 
 #### **Creating the Grid**:
 - The function `EtabsModel.File.NewGridOnly()` will create the grid using the parameters provided above.
@@ -65,9 +72,4 @@ The function `EtabsModel.File.NewGridOnly()` accepts the following parameters:
 - The function returns a value (`ret`), which you can check to see if the grid was successfully created.
 - If `ret` is non-zero, the grid creation has failed, and an error message is printed.
 - If `ret` is zero, the grid was added successfully, and a success message is printed.
-
-### **Key Considerations**:
-- **Units**: The model is initialized with `EtabsModel.InitializeNewModel(6)`, which sets the units to kilonewtons (kN) for forces, meters (m) for length, and Celsius for temperature.
-- **Grid Layout**: The number of grid lines in both directions (`number_lines_x` and `number_lines_y`) and the spacing between them (`spacing_x` and `spacing_y`) determine the layout of the grid.
-- **Story Heights**: The `typical_story_height` applies to most stories, while the `bottom_story_height` specifies a potentially different height for the bottom-most story.
 
