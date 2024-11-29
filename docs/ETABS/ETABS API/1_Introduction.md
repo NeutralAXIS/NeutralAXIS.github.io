@@ -19,8 +19,8 @@ The **ETABS API** allows users to control ETABS programmatically using programmi
 ### **How the ETABS API Works**
 
 
-> **NOTICE:** *If you're already familiar with how APIs work and just want to jump into practical examples, feel free to skip this section and proceed to the next one. Otherwise, let's take a quick look at how the ETABS API functions behind the scenes.*  
-
+:::info **NOTICE:** *If you're already familiar with how APIs work and just want to jump into practical examples, feel free to skip this section and proceed to the next one. Otherwise, let's take a quick look at how the ETABS API functions behind the scenes.*  
+:::
 
 The **ETABS API** acts as a bridge between Python and the ETABS software, allowing Python scripts to interact with ETABS and automate various tasks. Here's a breakdown of how it works:
 

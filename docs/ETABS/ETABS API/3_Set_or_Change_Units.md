@@ -45,7 +45,7 @@ To start a new model with a specific unit system, use the `InitializeNewModel()`
 
 #### **Syntax**:
 ```python
-ret = EtabsModel.InitializeNewModel(units)
+EtabsModel.InitializeNewModel(units)
 ```
 
 #### **Parameters**:
@@ -55,8 +55,8 @@ ret = EtabsModel.InitializeNewModel(units)
 ```python
 # Initialize a new model with the unit system 'kN_m_C' (option 6 from the table)
 kN_m_C = 6
-ret = EtabsModel.InitializeNewModel(kN_m_C)
-if ret != 0:
+init = EtabsModel.InitializeNewModel(kN_m_C)
+if init != 0:
     print("Failed to initialize the model.")
 ```
 
@@ -68,7 +68,7 @@ You can also change the units of an existing model during modeling using the `Se
 
 #### **Syntax**:
 ```python
-ret = EtabsModel.SetPresentUnits(units)
+EtabsModel.SetPresentUnits(units)
 ```
 
 #### **Parameters**:
@@ -77,8 +77,8 @@ ret = EtabsModel.SetPresentUnits(units)
 #### **Example**:
 ```python
 # Change the current units to 'kN_m_C' (option 6 from the table)
-ret = EtabsModel.SetPresentUnits(6)
-if ret != 0:
+set_unit = EtabsModel.SetPresentUnits(6)
+if set_unit != 0:
     print("Failed to change the units.")
 ```
 

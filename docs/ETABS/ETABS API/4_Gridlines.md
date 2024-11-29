@@ -18,8 +18,8 @@ To define and add a grid to a new ETABS model using Python, we can use the `new_
 
 ```python
 # Change the current units to 'kN_m_C' (option 6 from the table)
-ret = EtabsModel.SetPresentUnits(6)
-if ret != 0:
+set_unit = EtabsModel.SetPresentUnits(6)
+if set_unit != 0:
     print("Failed to change the units.")
 
 # Define grid parameters
@@ -32,7 +32,7 @@ spacing_x = 6.0                   # Distance between grid lines in the X directi
 spacing_y = 5.0                   # Distance between grid lines in the Y direction (meters)
 
 # Call the function to create the grid
-ret = EtabsModel.File.NewGridOnly(
+set_grid = EtabsModel.File.NewGridOnly(
     number_stories, 
     typical_story_height, 
     bottom_story_height, 
@@ -42,7 +42,7 @@ ret = EtabsModel.File.NewGridOnly(
 )
 
 # Check the result and display appropriate message
-if ret != 0:
+if set_grid != 0:
     print("Failed to add grid.")  # Print error message if grid creation failed
 else:
     print("Grid added successfully!")  # Print success message if grid is added
