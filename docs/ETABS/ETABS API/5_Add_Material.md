@@ -17,7 +17,7 @@ Use `AddMaterial` function in ETABS to add materials to your model.
 ## **Syntax**
 
 ```python
-SapModel.PropMaterial.AddMaterial(Name, MatType, Region, Standard, Grade)
+EtabsModel.PropMaterial.AddMaterial(Name, MatType, Region, Standard, Grade)
 ```
 **Parameters:**
 - **Name**: (string) The name of the material (e.g., `"HYSD415"`, `"M20"`).

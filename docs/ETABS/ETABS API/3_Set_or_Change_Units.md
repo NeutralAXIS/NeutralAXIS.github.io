@@ -4,7 +4,7 @@ description: "When creating a new model or changing units during modeling, it's 
 category: "Guides"
 tags: ["ETABS", "Python", "Automation", "Structural Engineering"]
 author: "NeutralAXIS | Swas02"
-date: "2024-11-25"
+date: "2024-11-26"
 layout: "default"
 version: "1.0"
 sidebar_position: 3
