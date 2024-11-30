@@ -39,7 +39,7 @@ We’d love to hear from you and keep the conversation going!
 
 ## **🤝 Join Our Community**  
 Want to help shape **NeutralAXIS**?  
-Check out our [**GitHub**](https://github.com/NeutralAXIS/NeutralAXIS.github.io/blob/main/sidebars.js) to contribute ideas, make suggestions, and collaborate on building a better platform.
+Check out our [**GitHub**](https://github.com/NeutralAXIS/NeutralAXIS.github.io/) to contribute ideas, make suggestions, and collaborate on building a better platform.
 
 ---
 

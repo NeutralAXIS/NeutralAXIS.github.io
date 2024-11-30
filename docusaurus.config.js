@@ -58,21 +58,7 @@ const config = {
           editUrl:
             "https://github.com/NeutralAXIS/NeutralAXIS.github.io/tree/main/",
         },
-        // blog: {
-        //   showReadingTime: false,
-        //   feedOptions: {
-        //     type: ["rss", "atom"],
-        //     xslt: true,
-        //   },
-        //   // Please change this to your repo.
-        //   // Remove this to remove the "edit this page" links.
-        //   editUrl:
-        //     "https://github.com/NeutralAXIS/NeutralAXIS.github.io/tree/main/",
-        //   // Useful options to enforce blogging best practices
-        //   onInlineTags: "warn",
-        //   onInlineAuthors: "warn",
-        //   onUntruncatedBlogPosts: "warn",
-        // },
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -107,7 +93,7 @@ const config = {
           //   position: "left",
           //   label: "Explore",
           // },
-          {to: '/docs/ETABS/ETABS%20API/Introduction', label: 'Etabs API', position: 'left'},
+          {to: '/ETABS/ETABS%20API/Introduction', label: 'Etabs API', position: 'left'},
           {
             href: "https://github.com/orgs/NeutralAXIS/discussions",
             label: "Ask 💬",
@@ -119,9 +105,9 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
+            title: "Topics",
             items: [
-              {to: '/docs/ETABS/ETABS%20API/Introduction', label: 'Etabs API'},
+              {to: '/ETABS/ETABS%20API/Introduction', label: 'Etabs API'},
             ],
           },
           {
