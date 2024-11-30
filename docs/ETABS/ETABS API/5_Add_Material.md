@@ -24,7 +24,7 @@ EtabsModel.PropMaterial.AddMaterial(Name, MatType, Region, Standard, Grade)
 - **MatType**: (int) The material type. Refer to the [Material Types Table](#material-types-table) for valid values.
 - **Region**: (string) The region where the material is defined (e.g., `"India"`).
 - **Standard**: (string) The material standard (e.g., `"Indian"`).
-- **Grade**: (string) The material grade as defined in the [Material Properties Table](#material-properties-table) (e.g., `"HYSD Grade 415"`, `"M20"`).
+- **Grade**: (string) The material grade as defined in the [Material Properties List](#material-properties-list) (e.g., `"HYSD Grade 415"`, `"M20"`).
 
 **Return Value:**
 - **[Material, res]**: A list containing:
@@ -102,14 +102,13 @@ This table identifies the numeric code for each material type in ETABS:
 
 ---
 
-## **Material Properties Table**
-This table lists commonly used materials in the Indian region, including their types, grades, and key properties. For additional materials from other regions, refer to the **"CSiMaterialLibrary*.xml"** file, located in the **"Property Libraries"** subfolder within the program's installation directory. 
+## **Material Properties List**
+This table lists commonly used materials in the Indian region, including their types, grades, and key properties. For additional materials from other regions, refer to the **"CSiMaterialLibrary\*.xml"** file, located in the **"Property Libraries\Materials"** subfolder within the program's installation directory. 
 
 For example, the file can be found at:  
-`C:\Program Files\ETABS\Property Libraries\CSiMaterialLibrary.xml`
+`C:\Program Files\ETABS\Property Libraries\Materials\CSiMaterialLibrary*.xml`
 
----
-
+<!-- 
 **Steel Materials**
 
 | **Material Name** | **Grade** | **Density** (kg/mm³) | **Modulus of Elasticity** (N/mm²) | **Yield Stress** (N/mm²) | **Tensile Stress** (N/mm²) | **Is Default** |
@@ -143,12 +142,35 @@ For example, the file can be found at:
 | **Mild250**       | Mild Grade 250| 0.00007697           | 200000                           | 250                      | 410                        | No             |
 | **HYSD415**       | HYSD Grade 415| 0.00007697           | 200000                           | 415                      | 485                        | Yes            |
 | **HYSD500**       | HYSD Grade 500| 0.00007697           | 200000                           | 500                      | 545                        | No             |
-| **HYSD550**       | HYSD Grade 550| 0.00007697           | 200000                           | 550                      | 585                        | No             |
+| **HYSD550**       | HYSD Grade 550| 0.00007697           | 200000                           | 550                      | 585                        | No             | -->
 
+#### **List of Available Indian Materials and Their Grades in '`CSiMaterialLibraryIndia.xml`**
+
+#### **Steel Materials:**
+- **Fe250**
+- **Fe345** (Default)
+
+#### **Concrete Materials:**
+- **M15**
+- **M20** 
+- **M25**
+- **M30** (Default)
+- **M35**
+- **M40**
+- **M45**
+- **M50**
+- **M55**
+- **M60**
+
+#### **Rebar Materials:**
+- **Mild Grade 250** 
+- **HYSD Grade 415** (Default)
+- **HYSD Grade 500**
+- **HYSD Grade 550**
 
 ---
 
-### **Error Handling**
+## **Error Handling**
 
 > If you didn't get the desired material added to the model, the expected output might not appear. Instead, a default material may be added or the function may fail due to issues with the input parameters.
 
@@ -158,6 +180,51 @@ The function `AddMaterial()` will add a default material if there's a typo or co
 
 - **Region / Standard**: Look for typos or incorrect values. If you're using materials from other regions, check the `CSiMaterialLibrary.xml` file in the "Property Libraries" folder (found in the program's installation directory).
 
-- **Grade**: Check for spelling mistakes or incorrect values. Use the exact values from the **Grade** column in the [Material Properties Table](#material-properties-table).
+- **Grade**: Check for spelling mistakes or incorrect values. Use the exact values from the **Grade** column in the [Material Properties List](#material-properties-list).
 
 ---
+
+## **Related Functions**
+
+The **`AddMaterial()`** method is part of the **"cPropMaterial Interface"** in the ETABS API. This interface allows you to define and manage material properties in your model.
+
+To understand how to use additional methods and apply them in your ETABS model, refer to the [**`CSI API ETABS v1.chm`**](Introduction#where-to-find-detailed-etabs-api-documentation) documentation. You can find detailed instructions and examples by searching for **"cPropMaterial Interface"**. 
+
+The table below lists important methods in the **`cPropMaterial Interface`**, which allows you to define and manage material properties in your ETABS model.
+
+| **Method Name**             | **Description**                                                             |
+|-----------------------------|-----------------------------------------------------------------------------|
+| **`AddMaterial()`**          | Adds a new material property to the model.                                   |
+| **`ChangeName()`**           | Changes the name of an existing material property.                           |
+| **`Count()`**                | Returns the total number of material properties in the model.                |
+| **`Delete()`**               | Deletes a specified material property.                                       |
+| **`GetMaterial()`**          | Retrieves basic material property data.                                     |
+| **`GetDamping()`**           | Retrieves additional damping data for materials.                            |
+| **`GetMassSource()`**        | (Deprecated) Retrieves the mass source for the model.                        |
+| **`GetMassSource_1()`**      | Retrieves the mass source for the model.                                     |
+| **`GetMPAnisotropic()`**     | Retrieves mechanical properties for anisotropic materials.                  |
+| **`GetMPIsotropic()`**       | Retrieves mechanical properties for isotropic materials.                    |
+| **`GetMPOrthotropic()`**     | Retrieves mechanical properties for orthotropic materials.                  |
+| **`GetMPUniaxial()`**        | Retrieves mechanical properties for uniaxial materials.                     |
+| **`GetNameList()`**          | Retrieves a list of all material property names of a specified type.        |
+| **`GetOConcrete()`**         | Retrieves additional material data for concrete.                           |
+| **`GetORebar()`**            | Retrieves additional material data for rebar.                               |
+| **`GetOSteel()`**            | Retrieves additional material data for steel.                               |
+| **`GetOTendon()`**           | Retrieves additional material data for tendon materials.                    |
+| **`GetSSCurve()`**           | Retrieves the material stress-strain curve.                                 |
+| **`GetTemp()`**              | Retrieves temperatures at which material properties are defined.            |
+| **`GetWeightAndMass()`**     | Retrieves the weight and mass per unit volume of a material.                |
+| **`SetDamping()`**           | Sets the additional damping data for a material.                            |
+| **`SetMassSource()`**        | (Deprecated) Sets the mass source for the model.                            |
+| **`SetMassSource_1()`**      | Sets the mass source for the model.                                         |
+| **`SetMPAnisotropic()`**     | Sets the material symmetry type to anisotropic.                            |
+| **`SetMPIsotropic()`**       | Sets the material symmetry type to isotropic.                              |
+| **`SetMPOrthotropic()`**     | Sets the material symmetry type to orthotropic.                            |
+| **`SetMPUniaxial()`**        | Sets the material symmetry type to uniaxial.                               |
+| **`SetOConcrete()`**         | Sets additional data for concrete materials.                               |
+| **`SetORebar()`**            | Sets additional data for rebar materials.                                  |
+| **`SetOSteel()`**            | Sets additional data for steel materials.                                  |
+| **`SetOTendon()`**           | Sets additional data for tendon materials.                                 |
+| **`SetSSCurve()`**           | Sets the stress-strain curve for materials with user-defined curves.       |
+| **`SetTemp()`**              | Assigns temperatures at which material properties are defined.              |
+| **`SetWeightAndMass()`**     | Assigns weight and mass per unit volume to a material.                      |
