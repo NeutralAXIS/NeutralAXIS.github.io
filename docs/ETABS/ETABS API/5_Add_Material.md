@@ -188,7 +188,7 @@ The function `AddMaterial()` will add a default material if there's a typo or co
 
 The **`AddMaterial()`** method is part of the **"cPropMaterial Interface"** in the ETABS API. This interface allows you to define and manage material properties in your model.
 
-To understand how to use additional methods and apply them in your ETABS model, refer to the [**`CSI API ETABS v1.chm`**](Introduction#where-to-find-detailed-etabs-api-documentation) documentation. You can find detailed instructions and examples by searching for **"cPropMaterial Interface"**. 
+To understand how to use additional methods and apply them in your ETABS model, refer to the [**`CSI API ETABS v1.chm`**](./Introduction#where-to-find-detailed-etabs-api-documentation) documentation. You can find detailed instructions and examples by searching for **"cPropMaterial Interface"**. 
 
 The table below lists important methods in the **`cPropMaterial Interface`**, which allows you to define and manage material properties in your ETABS model.
 
