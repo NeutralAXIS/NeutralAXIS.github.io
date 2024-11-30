@@ -49,6 +49,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath:'/',
           sidebarPath: "./sidebars.js",
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
@@ -100,13 +101,13 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
-          {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
-            position: "left",
-            label: "Explore",
-          },
-          // {to: '/blog', label: 'Blog', position: 'left'},
+          // {
+          //   type: "docSidebar",
+          //   sidebarId: "tutorialSidebar",
+          //   position: "left",
+          //   label: "Explore",
+          // },
+          {to: '/docs/ETABS/ETABS%20API/Introduction', label: 'Etabs API', position: 'left'},
           {
             href: "https://github.com/orgs/NeutralAXIS/discussions",
             label: "Ask 💬",
@@ -120,10 +121,7 @@ const config = {
           {
             title: "Docs",
             items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
+              {to: '/docs/ETABS/ETABS%20API/Introduction', label: 'Etabs API'},
             ],
           },
           {

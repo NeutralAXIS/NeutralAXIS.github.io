@@ -1,5 +1,5 @@
 ---
-title: "Adding Material Properties"
+title: "Adding Materials"
 description: "In ETABS, materials are assigned to structural elements like beams, columns, slabs, and foundations. The `AddMaterial` function allows you to add a new material to the model by specifying its name, type, region, standard, and grade."
 category: "Guides"
 tags: ["ETABS", "Python", "Automation", "Structural Engineering"]
