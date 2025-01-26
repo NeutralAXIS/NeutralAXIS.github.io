@@ -40,16 +40,53 @@ const config = {
     locales: ["en"],
   },
 
-      plugins: [require.resolve('docusaurus-lunr-search')],
-
-
+  plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/docusaurus.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json', // your PWA manifest
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: 'rgb(37, 194, 160)',
+          },
+        ],
+      }
+    ],
+    [
+      require.resolve('docusaurus-lunr-search'),
+      {
+        // Custom configuration for lunr-search
+        languages: ['en'], // Set the languages you want to support
+        searchPagePath: 'search', // The path for the search results page
+      }
+    ],
+    // Add other plugins here...
+  ],
+  
   presets: [
     [
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath:'/',
+          routeBasePath: "/",
           sidebarPath: "./sidebars.js",
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
@@ -78,6 +115,18 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
+      liveCodeBlock: {
+        /**
+         * The position of the live playground, above or under the editor
+         * Possible values: "top" | "bottom"
+         */
+        playgroundPosition: "bottom",
+      },
       // Replace with your project's social card
       // image: "img/docusaurus-social-card.jpg",
       navbar: {
@@ -93,7 +142,11 @@ const config = {
           //   position: "left",
           //   label: "Explore",
           // },
-          {to: '/ETABS/ETABS%20API/Introduction', label: 'Etabs API', position: 'left'},
+          {
+            to: "/ETABS/ETABS%20API/Introduction",
+            label: "Etabs API",
+            position: "left",
+          },
           {
             href: "https://github.com/orgs/NeutralAXIS/discussions",
             label: "Ask 💬",
@@ -107,7 +160,7 @@ const config = {
           {
             title: "Topics",
             items: [
-              {to: '/ETABS/ETABS%20API/Introduction', label: 'Etabs API'},
+              { to: "/ETABS/ETABS%20API/Introduction", label: "Etabs API" },
             ],
           },
           {
