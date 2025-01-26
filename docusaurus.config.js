@@ -193,7 +193,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} NeutralAXIS, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} NeutralAXIS. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
