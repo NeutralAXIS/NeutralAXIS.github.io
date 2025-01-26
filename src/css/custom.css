@@ -42,6 +42,7 @@
   /* Focus styles to increase the size of the input box */
   #search_input_react:focus {
     width: 200px;
+    padding:20px 20px 20px 50px;
   }
   #search_input_react::placeholder {
     color: transparent;
