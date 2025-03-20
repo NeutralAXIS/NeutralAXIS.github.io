@@ -218,5 +218,3 @@ AttributeError: 'NoneType' object has no attribute 'SapModel'
 - **Option 3**: Connects to an already running ETABS instance.
 
 ---
-
-This version should now be more clear, consistent, and user-friendly. Let me know if you'd like to add or modify anything else!
