@@ -1,0 +1,23 @@
+import React, { useState } from 'react';
+
+export default function SquareCalculator() {
+  const [number, setNumber] = useState(0);
+
+  const handleChange = (e) => {
+    setNumber(e.target.value);
+  };
+
+  return (
+    <>
+      <h3>Square Calculator</h3>
+      <input
+        type="number"
+        value={number}
+        onChange={handleChange}
+        placeholder="Enter a number"
+        style={{ marginRight: '1rem' }}
+      />
+      <span>Square: {number ? number * number : 0}</span>
+    </>
+  );
+}
