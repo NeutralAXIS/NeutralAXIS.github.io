@@ -1,7 +1,7 @@
 ---
 id: emission-factors-freight-vehicles
 title: Emission Factors for Freight Vehicles by Vehicle Type and Gross Weight
-sidebar_label: Emission Factors
+sidebar_label: Emission Factors for Freight Vehicles
 ---
 
 # Emission Factors for Freight Vehicles
